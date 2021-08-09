@@ -1,0 +1,14 @@
+html,body {
+    margin: 0;
+    padding:0;
+    height: 100%;
+}
+
+.container {
+    width: 60%;
+}
+
+.required-field::after {
+    content: "*";
+    color: red;
+}

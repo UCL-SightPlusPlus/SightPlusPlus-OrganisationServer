@@ -15,4 +15,8 @@ DATABASE_HOST = $dbHost
 DATABASE_PORT = $dbPort
 DATABASE_NAME = $dbName
 ```
-* Open a browser and derict to localhost:5000
+* Start server
+```
+npm start
+```
+Open a browser and derict to localhost:5000

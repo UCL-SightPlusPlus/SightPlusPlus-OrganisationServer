@@ -5,12 +5,16 @@ const serverProfileSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique : true,
+        lowercase: true,
+        trim: true,
+        strict: true,
     },
     description: {
         type: String,
     },
     url: {
         type: String,
+        trim: true,
     }
 });
 

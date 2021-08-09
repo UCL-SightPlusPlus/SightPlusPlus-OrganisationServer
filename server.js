@@ -13,7 +13,7 @@ const ServerProfile = require('./models/serverProfileModel');
 mongoose.connect(`mongodb://${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
 
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname + '/public'));
+app.use(express.static('public'));
 
 app.use(methodOverride('_method'));
 app.use(express.urlencoded({extended: true}));
