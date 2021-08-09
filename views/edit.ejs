@@ -11,8 +11,13 @@
 <body class="bg-light">
 	<!-- heading -->
 	<%- include('_heading') %>
-	<!-- heading -->    
-	<div class="container">
+	<!-- heading --> 
+	<% if(profile.hasOwnProperty('message')){ %>
+    <div class="alert alert-danger text-center" role="alert">
+      <strong> <%= profile.message %></strong>
+    </div>
+  <% } %>   
+	<div class="container mt-4">
 		<h4 class="mb-4">Edit Profile</h4>
 		<form action="/profile/<%= profile._id %>?_method=PUT" method="POST">
 		<%- include('_form') %>

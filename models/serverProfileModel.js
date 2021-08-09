@@ -7,7 +7,6 @@ const serverProfileSchema = new mongoose.Schema({
         unique : true,
         lowercase: true,
         trim: true,
-        strict: true,
     },
     description: {
         type: String,

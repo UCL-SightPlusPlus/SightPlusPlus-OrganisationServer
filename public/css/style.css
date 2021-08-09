@@ -4,6 +4,10 @@ html,body {
     height: 100%;
 }
 
+.heading {
+    margin-bottom: 1px;
+}
+
 .container {
     width: 60%;
 }

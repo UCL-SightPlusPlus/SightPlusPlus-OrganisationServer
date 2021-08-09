@@ -11,7 +11,8 @@ router.post('/', (req, res) => {
   serverProfile.save((err, profile) => {
     if (err) {
       console.log(err);
-      res.render('new', {profile: serverProfile});
+      const profileAndMessage = addErrorMessage(err, req);
+      res.render('new', {profile: profileAndMessage});
     } else {
       res.redirect('/');
     }
@@ -32,8 +33,8 @@ router.put('/:id', (req, res) => {
   ServerProfile.findByIdAndUpdate(req.params.id, req.body, {new: true, useFindAndModify: false}, (err, profile) => {
     if (err) {
       console.log(err);
-      const serverProfile = new ServerProfile(req.body);
-      res.render('edit', {profile: serverProfile});
+      const profileAndMessage = addErrorMessage(err, req);
+      res.render('edit', {profile: profileAndMessage});
     } else {
       res.redirect('/');
     }
@@ -48,5 +49,18 @@ router.delete('/:id', (req, res) => {
     res.redirect('/');
   });
 });
+
+function addErrorMessage(err, req) {
+    let profileAndMessage = {};
+    profileAndMessage.site = req.body.site;
+    profileAndMessage.description = req.body.description;
+    profileAndMessage.url = req.body.url;
+    if (err.code == 11000) {
+      profileAndMessage.message = 'Site already exists!';
+    } else {
+      profileAndMessage.message = 'Oops! Save profile failed!';
+    }
+    return profileAndMessage;
+}
 
 module.exports = router;

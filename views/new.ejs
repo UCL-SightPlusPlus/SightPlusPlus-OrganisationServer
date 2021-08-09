@@ -12,7 +12,12 @@
   <!-- heading -->
   <%- include('_heading') %>
   <!-- heading -->
-  <div class="container">
+  <% if(profile.hasOwnProperty('message')){ %>
+    <div class="alert alert-danger text-center" role="alert">
+      <strong> <%= profile.message %></strong>
+    </div>
+  <% } %>
+  <div class="container mt-4">
     <h4 class="mb-4">New Profile</h4>
     <form action="/profile" method="POST">
       <%- include('_form') %>
