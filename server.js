@@ -8,9 +8,14 @@ const app = express();
 // const session = require('express-session');
 // const flush = require('connect-flash');
 
-const ServerProfile = require('./models/serverProfileModel');
+mongoose.connect(
+   'mongodb://mongo:27017/SightPlusPlus', 
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
+    )
+    .then(() => console.log('MomgoDB connected.'))
+    .catch(err => console.log(`ERR OCCURED: ${err}`));
 
-mongoose.connect(`mongodb://${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}`, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+const ServerProfile = require('./models/serverProfileModel');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -22,6 +27,7 @@ app.use(express.json());
 app.use('/profile', serverProfileRouter);
  
 app.get('/', (req,res) => {
+
     ServerProfile.find({}, (err, profile) => {
         if (err) {
             console.error('Could not fetch server profile.');
@@ -29,7 +35,7 @@ app.get('/', (req,res) => {
         const stringProfiles = JSON.stringify(profile);
         const jsonProfiles = JSON.parse(stringProfiles);
         res.render('index', {profiles: jsonProfiles});
-    })
-})
+    });
+});
 
 app.listen(5000);
