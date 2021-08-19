@@ -1,18 +1,16 @@
 version: '3'
 services:
   sightplusplus-orgserver:
-    image: orgserver.azurecr.io/orgserver
+    image: orgserver.azurecr.io/sightplusplus-orgserver
     restart: always
     build: .
     ports:
-      - '5000:5000'
+      - '80:80'
     links:
       - mongo
 
   mongo:
     container_name: mongo
     image: mongo:latest
-    volumes:
-      - ./data:/data/db
     ports:
       - '27017:27017'

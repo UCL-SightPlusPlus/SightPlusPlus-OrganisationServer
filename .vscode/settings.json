@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/129b5412-0077-4825-9a1a-b97d93dded59/resourceGroups/SightPlusPlus-O/providers/Microsoft.Web/sites/sightplusplusorg",
+    "appService.deploySubpath": "."
+}
