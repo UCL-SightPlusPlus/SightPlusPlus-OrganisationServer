@@ -10,7 +10,7 @@ const app = express();
 
 mongoose.connect(
    'mongodb://mongo:27017/SightPlusPlus', 
-    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }
     )
     .then(() => console.log('MomgoDB connected.'))
     .catch(err => console.log(`ERR OCCURED: ${err}`));
