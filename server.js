@@ -9,7 +9,7 @@ const app = express();
 // const flush = require('connect-flash');
 
 mongoose.connect(
-   'mongodb://mongo:27017/SightPlusPlus', 
+   'mongodb://localhost:27017/SightPlusPlus', 
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }
     )
     .then(() => console.log('MomgoDB connected.'))
@@ -28,13 +28,11 @@ app.use('/profile', serverProfileRouter);
  
 app.get('/', (req,res) => {
 
-    ServerProfile.find({}, (err, profile) => {
+    ServerProfile.find({}, (err, profiles) => {
         if (err) {
             console.error('Could not fetch server profile.');
         }
-        const stringProfiles = JSON.stringify(profile);
-        const jsonProfiles = JSON.parse(stringProfiles);
-        res.render('index', {profiles: jsonProfiles});
+        res.render('index', {profiles: profiles});
     });
 });
 
