@@ -22,15 +22,16 @@
         <div class="card mt-4 shadow">
           <div class="card-body">
             <h4 class="card-title"><%= profile.site_name.toUpperCase() %></h4>
-            <table class="mt-3">
+            <table width="70%" class="mt-3">
               <% profile.devices.forEach(device => { %>
                 <tr>
-                  <td width="150" class="card-text text-muted mb-2">Device: <%= device.deviceType %></td>
-                  <td width="150" class="card-text text-muted mb-2">Location: <%= device.deviceLocation %></td>
+                  <td class="card-text text-muted mb-2">ID: <%=device._id%></td>
+                  <td class="card-text text-muted mb-2">Device: <%= device.deviceType %></td>
+                  <td class="card-text text-muted mb-2">Location: <%= device.deviceLocation %></td>
                   <% if(device.running == 1){ %>
-                    <td width="150" class="card-text text-muted mb-2">State: Running</td>
+                    <td class="card-text text-muted mb-2">State: Running</td>
                   <% } else if (device.running == 0) {%>
-                    <td width="150" class="card-text text-muted mb-2">State: Down</td>
+                    <td class="card-text text-muted mb-2">State: Down</td>
                   <% } %>
                 </tr>
               <% }); %>
