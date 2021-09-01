@@ -22,16 +22,24 @@
         <div class="card mt-4 shadow">
           <div class="card-body">
             <h4 class="card-title"><%= profile.site_name.toUpperCase() %></h4>
-            <table width="70%" class="mt-3">
+            <table width="70%" class="mt-3" border="1">
+                <tr>
+                    <th style="text-align: center">ID:</th>
+                    <th style="text-align: center">Device:</th>
+                    <th style="text-align: center">Location:</th>
+                    <th style="text-align: center">State:</th>
+                </tr>
               <% profile.devices.forEach(device => { %>
                 <tr>
-                  <td class="card-text text-muted mb-2">ID: <%=device._id%></td>
-                  <td class="card-text text-muted mb-2">Device: <%= device.deviceType %></td>
-                  <td class="card-text text-muted mb-2">Location: <%= device.deviceLocation %></td>
+                  <td class="card-text text-muted mb-2" align="center"><%=device._id%></td>
+                  <td class="card-text text-muted mb-2" align="center"><%= device.deviceType %></td>
+                  <td class="card-text text-muted mb-2" align="center"><%= device.deviceLocation %></td>
                   <% if(device.running == 1){ %>
-                    <td class="card-text text-muted mb-2">State: Running</td>
+                    <td class="card-text text-muted mb-2" align="center">Running</td>
                   <% } else if (device.running == 0) {%>
-                    <td class="card-text text-muted mb-2">State: Down</td>
+                    <td class="card-text text-muted mb-2" align="center">Down</td>
+                  <% } else {%>
+                     <td class="card-text text-muted mb-2"></td>
                   <% } %>
                 </tr>
               <% }); %>
