@@ -1,0 +1,120 @@
+@url = http://localhost:5000/profile
+
+POST {{url}}
+content-type: application/json
+
+{
+"site_name": "GOSH",
+"devices" :[
+{
+"_id": "5",
+"deviceType": "Camera",
+"deviceLocation": "Reception",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0,
+"running": 1
+},
+{
+"_id": "4",
+"deviceType": "BLE",
+"deviceLocation": "ER",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0
+},
+{
+"_id": "4",
+"deviceType": "BLE",
+"deviceLocation": "ER",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0
+},
+{
+"_id": "4",
+"deviceType": "BLE",
+"deviceLocation": "ER",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0
+},
+{
+"_id": "5",
+"deviceType": "Camera",
+"deviceLocation": "Reception",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0,
+"running": 1
+},
+{
+"_id": "5",
+"deviceType": "Camera",
+"deviceLocation": "Reception",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0,
+"running": 1
+},
+{
+"_id": "5",
+"deviceType": "Camera",
+"deviceLocation": "Reception",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0,
+"running": 1
+},
+{
+"_id": "5",
+"deviceType": "Camera",
+"deviceLocation": "Reception",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0,
+"running": 1
+},
+{
+"_id": "5",
+"deviceType": "Camera",
+"deviceLocation": "Reception",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0,
+"running": 1
+},
+{
+"_id": "5",
+"deviceType": "Camera",
+"deviceLocation": "Reception",
+"site": "GOSH DRIVE",
+"isIndoor": true,
+"floor": 0,
+"maxOccupancy": 60,
+"__v": 0,
+"running": 1
+}
+]
+}
+
+###
+DELETE {{url}}/GOSH

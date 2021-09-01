@@ -1,7 +1,7 @@
 version: '3'
 services:
   sightplusplus-orgserver:
-    image: sightplusplus-orgserver
+    image: orgserver.azurecr.io/orgserver
     restart: always
     build: .
     ports:

@@ -10,9 +10,9 @@ const app = express();
 
 mongoose.connect(
    'mongodb://mongo:27017/SightPlusPlus', 
-    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }
+    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }
     )
-    .then(() => console.log('MomgoDB connected.'))
+    .then(() => console.log('MongoDB connected.'))
     .catch(err => console.log(`ERR OCCURED: ${err}`));
 
 const ServerProfile = require('./models/serverProfileModel');
@@ -28,13 +28,11 @@ app.use('/profile', serverProfileRouter);
  
 app.get('/', (req,res) => {
 
-    ServerProfile.find({}, (err, profile) => {
+    ServerProfile.find({}, (err, profiles) => {
         if (err) {
             console.error('Could not fetch server profile.');
         }
-        const stringProfiles = JSON.stringify(profile);
-        const jsonProfiles = JSON.parse(stringProfiles);
-        res.render('index', {profiles: jsonProfiles});
+        res.render('index', {profiles: profiles});
     });
 });
 
