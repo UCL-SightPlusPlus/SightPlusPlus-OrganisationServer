@@ -9,10 +9,10 @@ const app = express();
 // const flush = require('connect-flash');
 
 mongoose.connect(
-   'mongodb://localhost:27017/SightPlusPlus', 
+   'mongodb://mongo:27017/SightPlusPlus', 
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }
     )
-    .then(() => console.log('MomgoDB connected.'))
+    .then(() => console.log('MongoDB connected.'))
     .catch(err => console.log(`ERR OCCURED: ${err}`));
 
 const ServerProfile = require('./models/serverProfileModel');
