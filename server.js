@@ -9,7 +9,7 @@ const app = express();
 // const flush = require('connect-flash');
 
 mongoose.connect(
-   'mongodb://mongo:27017/SightPlusPlus', 
+    `mongodb://${process.env.DATABASE_HOST}:${process.env.DATABASE_PORT}/${process.env.DATABASE_NAME}`,
     { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false }
     )
     .then(() => console.log('MongoDB connected.'))

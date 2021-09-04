@@ -8,7 +8,7 @@ router.post('/', (req, res) => {
       res.status(400);
       res.send(err);
     } else {
-      res.status(200).json('success');
+      res.status(200).send('success');
     }
   });
 });

@@ -1,22 +1,16 @@
-# SightPlusPlus-OrganisationServer
-## Webapp Local Setup
-Make sure you have node and mongodb installed
-* Install dependencies
-Open up a terminal and direct to the project folder. Run the commands below one by one:
+# AVINA with Sight++ v3 - OrganisationServer
+# Installation
+
+## Prerequisites
+- [Docker](https://www.docker.com/get-started)
+
+## Deployment and Configuration
+The AVINA organisation server is a containerized application, so it can easily be deployed to a cloud service or configured to run on a custom (on-premises) windows, linux, or mac-os machine of your choosing.
+
+### Deploying AVINA organisation server to a server of your choosing
+- Download the code.
+- Once downloaded, under the `/public/images` directory replace the existing logo.png with your organisation's logo after naming it `logo.png`.
+- Open the `.env` file with any editor and replace the `ORG_NAME` value with your organisation's name.
+- Deploy the server by running `docker-compose up --build -d`.
 ```
-npm init
-npm i express mongoose ejs method-override
-npm i --save-dev nodemon dotenv
-```
-* Environment settings
-Create a .env file in the project folder and save your environment settings
-```
-DATABASE_HOST = $dbHost
-DATABASE_PORT = $dbPort
-DATABASE_NAME = $dbName
-```
-* Start server
-```
-npm start
-```
-Open a browser and derict to localhost:5000
+Open a browser and redirect to localhost:5000
