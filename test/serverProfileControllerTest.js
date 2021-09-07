@@ -25,6 +25,7 @@ describe('Server Profile APIs', () => {
     describe('Test POST route /profile', () => {
         it('It should return success message', (done) => {
             const profile = {
+                "_id": 1,
                 "site_name": "GOSH",
                 "devices" :[
                     {
