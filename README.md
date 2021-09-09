@@ -12,5 +12,6 @@ The AVINA organisation server is a containerized application, so it can easily b
 - Once downloaded, under the `/public/images` directory replace the existing logo.png with your organisation's logo after naming it `logo.png`.
 - Open the `.env` file with any editor and replace the `ORG_NAME` value with your organisation's name.
 - Deploy the server by running `docker-compose up --build -d`.
-```
-Open a browser and redirect to localhost:5000
+- Open a browser and redirect to localhost:5000
+
+*For Azure deployment, you can follow this [guide](https://docs.microsoft.com/en-us/azure/container-instances/tutorial-docker-compose)*
